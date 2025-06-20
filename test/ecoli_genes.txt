@@ -1,0 +1,6 @@
+This is the command I used to get the output below
+zcat Code/MCB185/data/GCF_000005845.2_ASM584v2_genomic.gff.gz | grep -E $'\tgene\t' | cut -f 7 | sort | uniq -c > Code/mcb185_homework/test/ecoli_genes.txt
+   2209 +
+   2285 -
+
+There are more genes on the negative strand in E. coli.
