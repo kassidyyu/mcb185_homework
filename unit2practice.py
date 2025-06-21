@@ -1,6 +1,7 @@
 # Practice Problems from Unit 2
 
 import math
+import random
 
 # Write a function that calculates the triangular number. This is the sum of numbers from 1 to n.
 def triangular(n):
@@ -49,3 +50,64 @@ def pi_estimate(n):
 
 # Note: my pi_estimate function works the same except the inputted iteration is slightly different
 # pi_estimate(4) is the same as nilakantha(5)
+
+# Monty Pi-thon
+
+"""
+inside = 0
+count = 0
+while True:
+    x = random.random()
+    y = random.random()
+    if math.sqrt(x**2 + y**2) < 1: inside += 1
+    count += 1
+    print(4 * inside / count)
+"""
+
+# D&D Stats
+
+def three_dsix(n):
+    stat_sum = 0
+    for i in range(n):
+        for i in range(3): stat_sum += random.randint(1, 6)
+    return stat_sum / n
+
+def three_dsix_r_one(n):
+    stat_sum = 0
+    for i in range(n):
+        for i in range(3): stat_sum += random.randint(2, 6) # ignore 1's
+    return stat_sum / n
+
+# simulating real life rerolls
+def three_dsix_r_one_alt(n):
+    stat_sum = 0
+    for i in range(n):
+        for i in range(3):
+            roll = random.randint(1, 6)
+            while roll == 1:                # rerolls until you don't get 1
+                roll = random.randint(1, 6) # assigns new value to same variable
+            stat_sum += roll                # adds roll which will never be 1
+    return stat_sum / n
+
+def three_dsix_pairs(n):
+    stat_sum = 0
+    for i in range(n):
+        for i in range(3):
+            d1 = random.randint(1, 6)
+            d2 = random.randint(1, 6)
+            if d1 >= d2: stat_sum += d1
+            else:        stat_sum += d2
+    return stat_sum / n
+
+def four_dsix_drop_one(n):
+    stat_sum = 0
+    for i in range(n):
+        d1 = random.randint(1, 6)
+        d2 = random.randint(1, 6)
+        d3 = random.randint(1, 6)
+        d4 = random.randint(1, 6)
+        if   d1 <= d2 and d1 <= d3 and d1 <= d4: stat_sum += d2 + d3 + d4
+        elif d2 <= d1 and d2 <= d3 and d2 <= d4: stat_sum += d1 + d3 + d4
+        elif d3 <= d1 and d3 <= d2 and d3 <= d4: stat_sum += d1 + d2 + d4
+        else:                                    stat_sum += d1 + d2 + d3
+    return stat_sum / n
