@@ -9,8 +9,8 @@ for arg in sys.argv[1:]:
 
 vals_count = len(nums)
 
-nums.sort()         # necessary for finding median
-minimum = nums[0]
+nums.sort()             # necessary for finding median
+minimum = nums[0]       # can use indices since list is sorted
 maximum = nums[-1]
 if vals_count % 2 == 0: # calculation depends on if vals_count is even or odd
     median = (nums[int(vals_count / 2)] + nums[int(vals_count / 2 - 1)]) / 2
