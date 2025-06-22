@@ -53,8 +53,8 @@ def halflings_death_saves(n):   # given some large number of trials
 4. For both of these, I would define a function that requires an input of
 number of iterations or precision respectively.
 (a) I would change the while loop to a for loop with n iterations
-and return the result after the for loop completes.
-(b) I would check the difference between the estimate and math.pi and 
-compare it against the given precision with a line as follows
-if abs(4 * pi_fourths - math.pi) <= precision: return 4 * pi_fourths
+    and return the result after the for loop completes.
+(b) I would check the difference between the estimate and math.pi and compare
+    it against the given precision with a line as follows.
+        if abs(4 * pi_fourths - math.pi) <= precision: return 4 * pi_fourths
 """
