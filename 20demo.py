@@ -10,20 +10,20 @@ for i in range(4, -1, -1): print(i)
 
 basket = 'milk', 'eggs', 'bread'
 for thing in basket:
-    print(thing)
+	print(thing)
 
 for i in range(len(basket)):
-    print(basket[i])
+	print(basket[i])
 
 for i in range(7):
-    if i % 2 == 0: print(i, 'is even')
-    else:          print(i, 'is odd')
+	if i % 2 == 0: print(i, 'is even')
+	else:          print(i, 'is odd')
 
 for i in range(5):
-    print(random.random())
+	print(random.random())
 
 for i in range(3):
-    print(random.randint(1, 6))
+	print(random.randint(1, 6))
 
 random.seed(1)
 print(random.random())
