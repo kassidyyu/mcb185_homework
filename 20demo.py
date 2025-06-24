@@ -3,7 +3,7 @@
 import random
 
 # while True:
-#     print('hello')
+#   print('hello')
 
 for i in range(5): print(i)
 for i in range(4, -1, -1): print(i)

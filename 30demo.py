@@ -35,11 +35,11 @@ print('%s %.3f' % ('printf', math.pi))
 seq = 'GAATTC'
 
 for nt in seq:
-    print(nt, end='')
+	print(nt, end='')
 print()
 
 for i in range(len(seq)):
-    print(i, seq[i])
+	print(i, seq[i])
 
 print(seq[:4])
 
@@ -52,14 +52,14 @@ print(tax[::-1])
 
 nts = 'ACGT'
 for i, nt in enumerate(nts):
-    print(i, nt)
+	print(i, nt)
 
 names = ('adenine', 'cytosine', 'guanine', 'thymine')
 for nt, name in zip(nts, names):
-    print(nt, name)
+	print(nt, name)
 
 for i, (nt, name) in enumerate(zip(nts, names)):
-    print(i, nt, name)
+	print(i, nt, name)
 
 nts = ['A', 'T', 'C']
 print(nts)
