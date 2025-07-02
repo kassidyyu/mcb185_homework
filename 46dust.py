@@ -7,9 +7,8 @@ import math
 window = int(sys.argv[2])
 threshold = float(sys.argv[3])
 
-output = []
-
 for defline, seq in mcb185.read_fasta(sys.argv[1]):
+	output = []
 	subseq = seq[:window]
 	for i in range(len(seq) - window + 1):
 		a = subseq.count('A')
