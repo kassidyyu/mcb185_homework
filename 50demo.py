@@ -32,3 +32,7 @@ for k, v in d.items(): print(k, 'says', v)
 # for thing in d.items(): print(thing[0], thing[1])
 
 print(d.keys(), d.values(), list(d.values()))
+
+import itertools
+for nts in itertools.product('ACGT', repeat=2):
+	print(nts)
