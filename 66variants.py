@@ -24,11 +24,13 @@ while True:
 	line = fp.readline()
 	if line == '': break
 	line = line.split()
-	frec = {'feat': line[2], 'beg': int(line[3]), 'end': int(line[4])}
+	frec = {'chr': line[0], 'feat': line[2], 'beg': int(line[3]), 'end': int(line[4])}
 	fcat.append(frec)
 
 # sort by the beginning indices to catch all features
 fcat.sort(key=lambda d: d['beg'])
+
+# separate by chromosomes, vcf can be intervals! code should work for intervals
 
 # pointer for the fcat
 f_point = 0
@@ -53,8 +55,12 @@ for var in vars:
 		elif var[1] > fcat[f_point]['end']:
 			start = True
 			f_point += 1
+		# don't execute following block if not the same chromosome
 		# when the variant is in the range of the feature
 		elif var[1] >= fcat[f_point]['beg'] and var[1] <= fcat[f_point]['end']:
+			if var[0] != fcat[f_point]['chr']: 
+				f_point +=1
+				continue
 			start = True 
 			# if statement prevents duplicates (e.g. intron,intron,intron)
 			if fcat[f_point]['feat'] not in feats:
